@@ -1,0 +1,63 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+data = np.array([[0.0, -0.017630057145262133, 0.1803895711156114],
+[0.07511132571489887, 0.2739767364399331, 0.25416351809928206],
+[0.15022265142979774, 2.990903953222673, 0.5424580629111695],
+[0.2253339771446966, 0.758633051653445, 0.9557026855123482],
+[0.3004453028595955, 4.28670875739896, 2.2429869836137795],
+[0.37555662857449434, 3.253956161384421, 2.388395971386578],
+[0.4506679542893932, 5.424056278506508, 1.9933545072097312],
+[0.5257792800042921, 6.524787055949189, 2.2295577639336837],
+[0.600890605719191, 5.494700210721787, 2.039005639534222],
+[0.6760019314340898, 7.2270353694071705, 2.63537744868589],
+[0.7511132571489887, 9.156497507757244, 2.2933121408192276],
+[0.8262245828638876, 7.822730624440559, 2.2163221663837507],
+[0.9013359085787864, 8.544907820186918, 2.333549975712778],
+[0.9764472342936853, 7.510584087438158, 1.556576721947903],
+[1.0515585600085842, 8.05235542471394, 2.065380503987892],
+[1.1266698857234831, 12.412293668040627, 1.7466334949685978],
+[1.201781211438382, 11.05590343162136, 1.336716924677314],
+[1.2768925371532807, 11.699115624783042, 0.7951591337668905],
+[1.3520038628681796, 11.438178216684259, 0.27255893800915376],
+[1.4271151885830784, 15.386238157701008, -0.14046095086615237]])
+
+# split the array into 3 sub arrays of t, x, and y
+t = np.array(data[:, 0])
+x = np.array(data[:, 1])
+y = np.array(data[:, 2])
+
+# use polyfit to get the polynomial coefficients for plots
+px = np.polyfit(t, x, 1)
+py = np.polyfit(t, y, 2)
+print(px)
+print(py)
+
+# create a model for t using atleast 100 points
+tmodel = np.linspace(t.min(), t.max(), 200, True)
+
+# use polyvals to create models with the polynomial coefficients
+xmodel = np.polyval(px, tmodel)
+ymodel = np.polyval(py, tmodel)
+
+# create a subplot
+fig, axs = plt.subplots(2, 1)
+
+# settings for subplot 1
+axs[0].plot(t, x, "bx")
+axs[0].plot(tmodel, xmodel, "b-")
+axs[0].set_xlabel("t")
+axs[0].set_ylabel("x")
+axs[0].set_title("x and y displacement vs time")
+
+# settings for subplot 2
+axs[1].plot(t, y, "rx")
+axs[1].plot(tmodel, ymodel, "r-")
+axs[1].set_xlabel("t")
+axs[1].set_ylabel("y")
+
+# save the plot 
+plt.savefig("displacement_plot.png")
+
+# show the plot
+plt.show()
