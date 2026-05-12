@@ -7,7 +7,7 @@ class Vector3D:
         self.z = z
     
     def magnitude(self):
-        return math.sqrt(self.x ** 2 + self.y ** 2 + self.z **2)
+        return math.sqrt(self.x ** 2 + self.y ** 2 + self.z ** 2)
     
     def normalize(self):
         mag = self.magnitude()
