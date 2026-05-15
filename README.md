@@ -1,6 +1,6 @@
 # Python Learning Program
 ## Current Level in Python: Solid Foundation
-Elements worked with: Operators, strings, conditionals, loops, functions, built in functions, lists, tuples, sets, dictionaries, plotting, curve fitting, multidimensional audio <br>
+Elements worked with: Operators, strings, conditionals, loops, functions, built in functions, lists, tuples, sets, dictionaries, arrays, linked lists, plotting, curve fitting, multidimensional audio <br>
 Libraries worked with: Numpy, Matplotlib, Sound Device
 * ISS Deorbit Project: takes real time data from the International Space Station, plots its deorbit ground track over a chosen time window
 * DNA Translator: protein translation, reads a DNA scodon sequence and outputs the corresponding amino acid chain
