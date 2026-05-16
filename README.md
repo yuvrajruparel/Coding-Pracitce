@@ -33,4 +33,10 @@ Libraries worked with: Numpy, Matplotlib, Sound Device
     <td>D"Is-a" vs "has-a", super(), subclassing, building objects</td> 
     <td>2D Shape Physics Sandbox: Shape base composed of Vector3D, subclassed into circle, box, with gravity, walls, and elastic collisions (matplotlib)</td>
   </tr>
+  <tr>
+    <td>05/14/2026</td>
+    <td>Properties, Class & Static Methods</td>
+    <td>@property setters with validation, @classmethod factories, @staticmethod utilities</td> 
+    <td>Extended Shape module: validated dims (negative raise), factory constructors (Box.square, Circle.unit), static helpers</td>
+  </tr>
 </table>

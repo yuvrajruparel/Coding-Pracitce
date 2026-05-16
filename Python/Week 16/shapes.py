@@ -9,10 +9,30 @@ class Shape:
     def __init__(self, pos, vel):
         self.pos = pos
         self.vel = vel
+    
+    @property
+    def pos(self):
+        return self._pos
+
+    @pos.setter                                     # checks if pos is Vector3D
+    def pos(self, value):
+        if not isinstance(value, Vector3D):
+            raise TypeError("position must be a Vector3D")
+        self._pos = value
 
     def update(self, dt, g=9.81):
         self.vel = self.vel + Vector3D(0, -g, 0) * dt
         self.pos = self.pos + self.vel * dt
+    
+    @staticmethod
+    def collision_pair(a, b):
+        """True if a and b collide (either direction)."""
+        return a.collides_with(b) or b.collides_with(a)
+
+    @staticmethod
+    def clamp(value, lo, hi):
+        """Pin value into [lo, hi]."""
+        return max(lo, min(hi, value))
 
     def __repr__(self):
         name = type(self).__name__
@@ -21,9 +41,21 @@ class Shape:
 
 class Circle(Shape):
     def __init__(self, pos, vel, radius):
-        super().__init__(pos, vel) # reuse parent
+        super().__init__(pos, vel) 
         self.radius = radius
-        
+
+    @property
+    def radius(self):
+        return self._radius
+    
+    @radius.setter                          # checks if radius > 0 and numeric  
+    def radius(self, value):
+        if not isinstance(value, (int, float)):
+            raise TypeError("radius must be numeric")
+        if value <= 0:
+            raise ValueError("radius must be > 0")
+        self._radius = value
+
     @property
     def area(self):
         return math.pi * self.radius ** 2
@@ -39,6 +71,14 @@ class Circle(Shape):
                 and dy < self.radius + other.height / 2)
         return False
     
+    @classmethod
+    def unit(cls, pos):                             # unit circle at given position
+        return cls(pos, Vector3D(0, 0, 0), 1.0)
+
+    @classmethod
+    def at_rest(cls, pos, radius):                  # zero velocity
+        return cls(pos, Vector3D(0, 0, 0), radius)
+    
 class Box(Shape):
     def __init__(self, pos, vel, width, height):
         super().__init__(pos, vel)
@@ -46,8 +86,32 @@ class Box(Shape):
         self.height = height
     
     @property
+    def width(self):
+        return self._width
+    
+    @width.setter
+    def width(self, value):
+        if not isinstance(value, (int, float)):
+            raise TypeError("width must be numeric")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self._width = value
+
+    @property
+    def height(self):
+        return self._height
+    
+    @height.setter
+    def height(self, value):
+        if not isinstance(value, (int, float)):
+            raise TypeError("height must be numeric")
+        if value <= 0:
+            raise ValueError("height must be > 0")
+        self._height = value
+
+    @property
     def area(self):
-        return self.width * self.height
+        return self._width * self._height
 
     def collides_with(self, other):
         if isinstance(other, Box):
@@ -61,6 +125,14 @@ class Box(Shape):
             return (dx < self.width / 2 + other.radius
                 and dy < self.height / 2 + other.radius)
         return False
+    
+    @classmethod
+    def square(cls, pos, vel, side):                # width = height = side
+        return cls(pos, vel, side, side)
+    
+    @classmethod
+    def at_rest(cls, pos, w, h):
+        return cls(pos, Vector3D(0, 0, 0), w, h)
     
 # wall bounce helper
 def bounce_walls(s, x_min, x_max, y_min, y_max):
