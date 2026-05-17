@@ -39,4 +39,10 @@ Libraries worked with: Numpy, Matplotlib, Sound Device
     <td>@property setters with validation, @classmethod factories, @staticmethod utilities</td> 
     <td>Extended Shape module: validated dims (negative raise), factory constructors (Box.square, Circle.unit), static helpers</td>
   </tr>
+  <tr>
+    <td>05/15/2026</td>
+    <td>Exceptions & Error Handling</td>
+    <td>try/except/else/finally, EAFP vs LBYL, raise/re-raise/raise from, custom exception hierarchies</td>
+    <td>Hardened shapes.py & vector3d.py: exceptions.py module (ShapeError, InvalidDimensionError, VectorError), setters raise domain types, fixed silent normalize() bug, sandbox loop recovers from bad frames</td>
+  </tr>
 </table>

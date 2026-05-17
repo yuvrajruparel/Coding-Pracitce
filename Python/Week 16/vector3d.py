@@ -1,4 +1,5 @@
 import math
+from exceptions import VectorError
 
 class Vector3D:
     def __init__(self, x, y, z):
@@ -13,9 +14,8 @@ class Vector3D:
     def normalize(self):
         mag = self.magnitude
         if mag == 0:
-            return False
-        else:
-            return Vector3D(self.x / mag, self.y / mag, self.z / mag)
+            raise VectorError("cannot normalize a zero vector")
+        return Vector3D(self.x / mag, self.y / mag, self.z / mag)
     
     def dot(self, other):
         return self.x * other.x + self.y * other.y + self.z * other.z

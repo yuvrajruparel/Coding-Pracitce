@@ -4,6 +4,7 @@ import itertools
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from matplotlib.animation import FuncAnimation
+from exceptions import InvalidDimensionError, ShapeError
 
 class Shape:
     def __init__(self, pos, vel):
@@ -14,10 +15,10 @@ class Shape:
     def pos(self):
         return self._pos
 
-    @pos.setter                                     # checks if pos is Vector3D
+    @pos.setter
     def pos(self, value):
         if not isinstance(value, Vector3D):
-            raise TypeError("position must be a Vector3D")
+            raise InvalidDimensionError(f"position must be a Vector3D, got {type(value).__name__}")
         self._pos = value
 
     def update(self, dt, g=9.81):
@@ -48,12 +49,12 @@ class Circle(Shape):
     def radius(self):
         return self._radius
     
-    @radius.setter                          # checks if radius > 0 and numeric  
+    @radius.setter
     def radius(self, value):
         if not isinstance(value, (int, float)):
-            raise TypeError("radius must be numeric")
+            raise InvalidDimensionError(f"radius must be numeric, got {type(value).__name__}")
         if value <= 0:
-            raise ValueError("radius must be > 0")
+            raise InvalidDimensionError(f"radius must be > 0, got {value}")
         self._radius = value
 
     @property
@@ -92,9 +93,9 @@ class Box(Shape):
     @width.setter
     def width(self, value):
         if not isinstance(value, (int, float)):
-            raise TypeError("width must be numeric")
+            raise InvalidDimensionError(f"width must be numeric, got {type(value).__name__}")
         if value <= 0:
-            raise ValueError("width must be > 0")
+            raise InvalidDimensionError(f"width must be > 0, got {value}")
         self._width = value
 
     @property
@@ -104,9 +105,9 @@ class Box(Shape):
     @height.setter
     def height(self, value):
         if not isinstance(value, (int, float)):
-            raise TypeError("height must be numeric")
+            raise InvalidDimensionError(f"height must be numeric, got {type(value).__name__}")
         if value <= 0:
-            raise ValueError("height must be > 0")
+            raise InvalidDimensionError(f"height must be > 0, got {value}")
         self._height = value
 
     @property
@@ -211,24 +212,37 @@ def main():
     
     # one animation step
     def step(frame):
-        # 1. move every shape
-        for s in shapes:
-            s.update(DT)
-            bounce_walls(s, X_MIN, X_MAX, Y_MIN, Y_MAX)
-        # 2. check every pair for collision
-        for a, b in itertools.combinations(shapes, 2):
-            if a.collides_with(b):
-                elastic(a, b)
-        # 3. push new positions into the drawn patches
-        for s, art in zip(shapes, artists):
-            if isinstance(s, Circle):
-                art.center = (s.pos.x, s.pos.y)
-            else:
-                art.set_xy((s.pos.x - s.width/2, s.pos.y - s.height/2))
-        return artists
+        try:
+            # 1. move every shape
+            for s in shapes:
+                s.update(DT)
+                bounce_walls(s, X_MIN, X_MAX, Y_MIN, Y_MAX)
+            # 2. check every pair for collision
+            for a, b in itertools.combinations(shapes, 2):
+                if a.collides_with(b):
+                    elastic(a, b)
+            # 3. push new positions into the drawn patches
+            for s, art in zip(shapes, artists):
+                if isinstance(s, Circle):
+                    art.center = (s.pos.x, s.pos.y)
+                else:
+                    art.set_xy((s.pos.x - s.width/2, s.pos.y - s.height/2))
+            return artists
+        except ShapeError as e:
+            print(f"[frame {frame}] skipped: {e}")
+            return artists
     
-    anim = FuncAnimation(fig, step, frames=600, interval=20, blit=False)
-    plt.show()
+    try:
+        anim = FuncAnimation(fig, step, frames=600, interval=20, blit=False)
+        plt.show()
+    finally:
+        plt.close(fig)
+
+# sanity check
+try:
+    bad = Circle(Vector3D(0,0,0), Vector3D(0,0,0), radius=-1)
+except InvalidDimensionError as e:
+    print(f"caught as expected: {e}")
 
 if __name__=="__main__":
     main()
