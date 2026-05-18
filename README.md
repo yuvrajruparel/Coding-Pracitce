@@ -36,13 +36,18 @@ Libraries worked with: Numpy, Matplotlib, Sound Device
   <tr>
     <td>05/14/2026</td>
     <td>Properties, Class & Static Methods</td>
-    <td>@property setters with validation, @classmethod factories, @staticmethod utilities</td> 
+    <td>@property setters with validation, @classmethod, @staticmethod</td> 
     <td>Extended Shape module: validated dims (negative raise), factory constructors (Box.square, Circle.unit), static helpers</td>
   </tr>
   <tr>
     <td>05/15/2026</td>
     <td>Exceptions & Error Handling</td>
-    <td>try/except/else/finally, EAFP vs LBYL, raise/re-raise/raise from, custom exception hierarchies</td>
-    <td>Hardened shapes.py & vector3d.py: exceptions.py module (ShapeError, InvalidDimensionError, VectorError), setters raise domain types, fixed silent normalize() bug, sandbox loop recovers from bad frames</td>
+    <td>try/except/else/finally, raise/re-raise/raise from, custom exceptions</td>
+    <td>Hardened shapes.py & vector3d.py: exceptions.py module (ShapeError, InvalidDimensionError, VectorError), fixed silent normalize() bug, sandbox loop recovers from bad frames</td>
   </tr>
 </table>
+
+### Spring-Mass-Damper Sandbox
+Created interactive simulation of a 1-DOF mass spring damper system. Newton's 2nd Law cast into a state space form and integrated with RK4 method. 
+
+Saturday: Built the model using a matplotlib view system, with sliders for m/k/c/x₀/v₀/A/ω_f, and radio buttons for forcing type (free/step/sin).
