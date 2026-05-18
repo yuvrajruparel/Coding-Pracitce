@@ -47,7 +47,7 @@ Libraries worked with: Numpy, Matplotlib, Sound Device
   </tr>
 </table>
 
-### Spring-Mass-Damper Sandbox
-Created interactive simulation of a 1-DOF mass spring damper system. Newton's 2nd Law cast into a state space form and integrated with RK4 method. 
+### Weekend Project: Spring-Mass-Damper Sandbox
+A spring-mass-damper is the simplest model of a vibrating system — a block attached to a spring with some friction slowing it down. It's the standard textbook example for studying how things oscillate, settle, and resonate, and shows up everywhere from car suspensions to building sway. Created interactive simulation of a 1-DOF mass spring damper system. Newton's 2nd Law cast into a state space form and integrated with RK4 method. 
 
 Saturday: Built the model using a matplotlib view system, with sliders for m/k/c/x₀/v₀/A/ω_f, and radio buttons for forcing type (free/step/sin).
