@@ -1,5 +1,5 @@
 # Python Learning Program
-## Current Level in Python: Solid Foundation
+## Current Level in Python: Weeks 1-15 Solid Foundation
 Elements worked with: Operators, strings, conditionals, loops, functions, built in functions, lists, tuples, sets, dictionaries, arrays, linked lists, plotting, curve fitting, multidimensional audio <br>
 Libraries worked with: Numpy, Matplotlib, Sound Device
 * ISS Deorbit Project: takes real time data from the International Space Station, plots its deorbit ground track over a chosen time window
@@ -7,7 +7,7 @@ Libraries worked with: Numpy, Matplotlib, Sound Device
 * Cantilever beam deflection: computes deflection along a cantilever beam under given loading conditions
 * Unit converter: converts values between length, mass, and temperature units
 * Pig Latin translator: takes English input and returns the Pig Latin version
-## Week 1 (May 11th/2026 - May 17th/2026): OOP Fundamentals
+## Week 16 (May 11th/2026 - May 17th/2026): OOP Fundamentals
 <table border="1">
   <tr>
     <th>Date</th>
