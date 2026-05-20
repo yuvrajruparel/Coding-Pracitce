@@ -66,5 +66,11 @@ Sunday: Built the model using a pygame view system, with sliders, radio buttons,
     <td>Pygame Fundamentals</td>
     <td>Surfaces, event loop, input→update→draw, clock.tick</td>
     <td>Bouncing Ball: 3 balls in a list, space-bar pause, arrow-key velocity nudge, translucent trail, random RGB on wall hit</td>
+  </tr>
+  <tr>
+    <td>05/19/2026</td>
+    <td>Sprite & Group</td>
+    <td>pygame.sprite.Sprite, image+rect, Group container, batched update()/draw()</td>
+    <td>Bouncing Balls v2: 50 sprites in a Group, space-bar pause, arrow-key velocity nudge, random RGB on wall hit</td>
 </tr>
-  </table>
+</table>
