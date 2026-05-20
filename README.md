@@ -65,6 +65,6 @@ Sunday: Built the model using a pygame view system, with sliders, radio buttons,
     <td>05/18/2026</td>
     <td>Pygame Fundamentals</td>
     <td>Surfaces, event loop, input→update→draw, clock.tick</td>
-    <td>Bouncing Ball: 3 balls in a list, SPACE pause, arrow-key velocity nudge, translucent trail, random RGB on wall hit</td>
+    <td>Bouncing Ball: 3 balls in a list, space-bar pause, arrow-key velocity nudge, translucent trail, random RGB on wall hit</td>
 </tr>
   </table>
