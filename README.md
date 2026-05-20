@@ -53,3 +53,18 @@ A spring-mass-damper is the simplest model of a vibrating system — a block att
 Saturday: Built the model using a matplotlib view system, with sliders for m/k/c/x₀/v₀/A/ω_f, and radio buttons for forcing type (free/step/sin).
 
 Sunday: Built the model using a pygame view system, with sliders, radio buttons, and a physical simulation of the spring-mass damper. 
+## Week 17 (May 18th/2026 - May 24th/2026): Pygame
+<table border="1">
+  <tr>
+    <th>Date</th>
+    <th>Topic</th>
+    <th>What I learnt</th>
+    <th>Mini Project</th>
+  </tr>
+  <tr>
+    <td>05/18/2026</td>
+    <td>Pygame Fundamentals</td>
+    <td>Surfaces, event loop, input→update→draw, clock.tick</td>
+    <td>Bouncing Ball: 3 balls in a list, SPACE pause, arrow-key velocity nudge, translucent trail, random RGB on wall hit</td>
+</tr>
+  </table>
