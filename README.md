@@ -48,11 +48,11 @@ Libraries worked with: Numpy, Matplotlib, Sound Device
 </table>
 
 ### Weekend Project: Spring-Mass-Damper Sandbox
-A spring-mass-damper is the simplest model of a vibrating system — a block attached to a spring with some friction slowing it down. It's the standard textbook example for studying how things oscillate, settle, and resonate, and shows up everywhere from car suspensions to building sway. Created interactive simulation of a 1-DOF mass spring damper system. Newton's 2nd Law cast into a state space form and integrated with RK4 method. 
+A spring-mass-damper is a model of a vibrating system — a block attached to a spring with some friction slowing it down. It shows how things oscillate, settle, and resonate, and shows up everywhere from car suspensions to building sway. I created an interactive simulation of a 1-DOF mass spring damper system. Newton's 2nd Law cast into a state space form and integrated with RK4 method. 
 
-Saturday: Built the model using a matplotlib view system, with sliders for m/k/c/x₀/v₀/A/ω_f, and radio buttons for forcing type (free/step/sin).
+Saturday: Built the model using a matplotlib view system, with sliders, and radio buttons for forcing type.
 
-Sunday: Built the model using a pygame view system, with sliders, radio buttons, and a physical simulation of the spring-mass damper. 
+Sunday: Built pygame model, with sliders, radio buttons, and a physical simulation of the spring-mass damper. 
 ## Week 17 (May 18th/2026 - May 24th/2026): Pygame
 <table border="1">
   <tr>
@@ -72,5 +72,11 @@ Sunday: Built the model using a pygame view system, with sliders, radio buttons,
     <td>Sprite & Group</td>
     <td>pygame.sprite.Sprite, image+rect, Group container, batched update()/draw()</td>
     <td>Bouncing Balls v2: 50 sprites in a Group, space-bar pause, arrow-key velocity nudge, random RGB on wall hit</td>
-</tr>
+  </tr>
+  <tr>
+    <td>05/20/2026</td>
+    <td>Collisions</td>
+    <td>colliderect, spritecollide(dokill), Sprite vs Group, rect-based hit detection</td>
+    <td>Brick-Breaker Prototype: 8×5 brick wall, mouse paddle, return reset, space pause, angle-nudge bounce on paddle hit</td>
+  </tr>
 </table>
