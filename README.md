@@ -79,4 +79,10 @@ Sunday: Built pygame model, with sliders, radio buttons, and a physical simulati
     <td>colliderect, spritecollide(dokill), Sprite vs Group, rect-based hit detection</td>
     <td>Brick-Breaker Prototype: 8×5 brick wall, mouse paddle, return reset, space pause, angle-nudge bounce on paddle hit</td>
   </tr>
+  <tr>
+  <td>05/21/2026</td>
+  <td>Sound and Animation</td>
+  <td>pygame.mixer (Sound vs music), pre_init, play/pause/loop, frame-based animation, playing flag, dt timing</td>
+  <td>Brick-Breaker v2: hit/break/lose/win sfx, looping bg music, paddle squish animation (5 frames, 80ms) on ball hit</td>
+  </tr>
 </table>
