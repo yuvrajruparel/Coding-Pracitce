@@ -85,4 +85,10 @@ Sunday: Built pygame model, with sliders, radio buttons, and a physical simulati
   <td>pygame.mixer (Sound vs music), pre_init, play/pause/loop, frame-based animation, playing flag, dt timing</td>
   <td>Brick-Breaker v2: hit/break/lose/win sfx, looping bg music, paddle squish animation (5 frames, 80ms) on ball hit</td>
   </tr>
+  <tr>
+  <td>05/22/2026</td>
+  <td>Scene State Machine</td>
+  <td>Scene base class (handle_event/update/draw), SceneManager with go_to(), polymorphic dispatch, scene swapping, thin main loop pattern</td>
+  <td>Brick-Breaker v3: Menu/Play/GameOver scenes, pause overlay, +10/brick score with center watermark, mm:ss.cs timer, RETURN-driven flow</td>
+  </tr>
 </table>
