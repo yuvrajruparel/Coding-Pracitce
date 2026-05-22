@@ -89,6 +89,6 @@ Sunday: Built pygame model, with sliders, radio buttons, and a physical simulati
   <td>05/22/2026</td>
   <td>Scene State Machine</td>
   <td>Scene base class (handle_event/update/draw), SceneManager with go_to(), polymorphic dispatch, scene swapping, thin main loop pattern</td>
-  <td>Brick-Breaker v3: Menu/Play/GameOver scenes, pause overlay, +10/brick score with center watermark, mm:ss.cs timer, RETURN-driven flow</td>
+  <td>Brick-Breaker v3: Menu/Play/GameOver scenes, pause overlay, +10/brick score with center watermark, mm:ss.cs timer, return-driven flow</td>
   </tr>
 </table>
