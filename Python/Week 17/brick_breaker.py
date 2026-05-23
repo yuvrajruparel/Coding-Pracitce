@@ -1,10 +1,10 @@
 import pygame, random
 
 # Setting up all the variables
-SCREEN_WIDTH, SCREEN_HEIGHT, FPS = 640, 480, 60
-PADDLE_W, PADDLE_H = 100, 12
-BALL_SIZE, BALL_VX, BALL_VY = 20, random.choice([-5, 5]), -5
-BRICK_W, BRICK_H, BRICK_COL, BRICK_ROW, GAP = 70, 20, 8, 5, 80/9
+SCREEN_WIDTH, SCREEN_HEIGHT, FPS = 800, 600, 60
+PADDLE_W, PADDLE_H = 130, 15
+BALL_SIZE, BALL_VX, BALL_VY = 20, random.choice([-6, 6]), -6
+BRICK_W, BRICK_H, BRICK_COL, BRICK_ROW, GAP = 90, 25, 8, 5, 80/9
 BG = (0, 10, 30)
 PADDLE_COLOR, BALL_COLOR = (255, 255, 255), (255, 255, 255)
 ROW_COLORS = [(255, 80, 80), (255, 160, 80), (255, 220, 80), (120, 220, 100), (100, 180, 255)]
@@ -12,7 +12,7 @@ ROW_COLORS = [(255, 80, 80), (255, 160, 80), (255, 220, 80), (120, 220, 100), (1
 class Paddle(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__() # generate 5 squish frames as Surfaces (no PNG files needed)
-        heights = [12, 8, 6, 8, 12]   # idle → compress → compress → uncompress → idle
+        heights = [15, 10, 8, 10, 15]   # idle → compress → compress → uncompress → idle
         self.frames = []
         for h in heights:
             surf = pygame.Surface((PADDLE_W, PADDLE_H), pygame.SRCALPHA)
@@ -50,7 +50,7 @@ class Ball(pygame.sprite.Sprite):
         self.color = BALL_COLOR
         pygame.draw.circle(self.image, self.color, (BALL_SIZE / 2, BALL_SIZE / 2), BALL_SIZE / 2)
         self.rect = self.image.get_rect(center=(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2))
-        self.vx = random.choice([-5, 5])
+        self.vx = random.choice([-6, 6])
         self.vy = BALL_VY
     
     def update(self):
@@ -101,8 +101,8 @@ class SceneManager:
 class MenuScene(Scene):                                                      
     def __init__(self, manager):                                             
         super().__init__(manager)                                                      
-        self.big = pygame.font.SysFont(None, 64)                         
-        self.small = pygame.font.SysFont(None, 26)                                     
+        self.big = pygame.font.SysFont("menlo", 64, bold = True)                         
+        self.small = pygame.font.SysFont("menlo", 22)                                     
     def handle_event(self, event):                                                     
         if event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:                
             self.manager.go_to(PlayScene(self.manager))                              
@@ -122,8 +122,8 @@ class PlayScene(Scene):
         self.score = 0
         self.elapsed_ms = 0
         self.paused = False
-        self.score_font = pygame.font.SysFont(None, 120)
-        self.timer_font = pygame.font.SysFont(None, 26)
+        self.score_font = pygame.font.SysFont("menlo", 80, bold = True)
+        self.timer_font = pygame.font.SysFont("menlo", 26)
         self.hit    = pygame.mixer.Sound("Python/Week 17/sounds/hit.wav");    self.hit.set_volume(0.6)
         self.break_ = pygame.mixer.Sound("Python/Week 17/sounds/break.wav");  self.break_.set_volume(0.6)
         self.lose   = pygame.mixer.Sound("Python/Week 17/sounds/lose.wav");   self.lose.set_volume(1)
@@ -157,9 +157,9 @@ class PlayScene(Scene):
             self.ball.vy = -self.ball.vy
             self.ball.rect.bottom = self.paddle.rect.top
             offset = (self.ball.rect.centerx - self.paddle.rect.centerx) / (PADDLE_W / 2)
-            self.ball.vx = int(5 * offset) if offset else self.ball.vx
+            self.ball.vx = int(6 * offset) if offset else self.ball.vx
             if self.ball.vx == 0:
-                self.ball.vx = 5 if offset >= 0 else -5
+                self.ball.vx = 6 if offset >= 0 else -6
 
         hits = pygame.sprite.spritecollide(self.ball, self.bricks, True)
         if hits:
@@ -193,16 +193,16 @@ class GameOver(Scene):
         self.score = score
         self.time_str = time_str
         self.won = won
-        self.big   = pygame.font.SysFont(None, 56)
-        self.med   = pygame.font.SysFont(None, 36)
-        self.small = pygame.font.SysFont(None, 22)
+        self.big   = pygame.font.SysFont("menlo", 64, bold = True)
+        self.med   = pygame.font.SysFont("menlo", 36)
+        self.small = pygame.font.SysFont("menlo", 22)
     def handle_event(self, event):
         if event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
             self.manager.go_to(MenuScene(self.manager))
     def draw(self, screen):
         screen.fill(BG)
         cx = SCREEN_WIDTH // 2
-        msg   = "YOU WIN" if self.won else "GAME OVER"
+        msg   = "YOU WIN" if self.won else "YOU LOSE"
         color = (120, 220, 100) if self.won else (255, 80, 80)
         title  = self.big.render(msg, True, color)
         s_line = self.med.render(f"Total Score: {self.score}", True, (255, 220, 80))

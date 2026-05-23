@@ -48,7 +48,7 @@ Libraries worked with: Numpy, Matplotlib, Sound Device
 </table>
 
 ### Weekend Project: Spring-Mass-Damper Sandbox
-A spring-mass-damper is a model of a vibrating system — a block attached to a spring with some friction slowing it down. It shows how things oscillate, settle, and resonate, and shows up everywhere from car suspensions to building sway. I created an interactive simulation of a 1-DOF mass spring damper system. Newton's 2nd Law cast into a state space form and integrated with RK4 method. 
+A spring-mass-damper is a model of a vibrating system — a block attached to a spring with some friction slowing it down. It shows up everywhere from car suspensions to building sway. I created an interactive simulation of a 1-DOF mass spring damper system. Newton's 2nd Law cast into a state space form and integrated with RK4 method. 
 
 Saturday: Built the model using a matplotlib view system, with sliders, and radio buttons for forcing type.
 
@@ -92,3 +92,8 @@ Sunday: Built pygame model, with sliders, radio buttons, and a physical simulati
   <td>Brick-Breaker v3: Menu/Play/GameOver scenes, pause overlay, +10/brick score with center watermark, mm:ss.cs timer, return-driven flow</td>
   </tr>
 </table>
+
+### Weekend Project: Mini Videogame Arcade
+Using pygame to create an online Arcade with 3 classic games, Brick Breaker, Pong, and Asteroids Lite. I integrated animations, sound systems, different scenes to represent a Game Menu, Win/Lose Scene, and a Main menu that can access all 3 games, with buttons to select the game to play.
+
+Saturday: Built the Pong game against AI Bot, completely equipped with sounds, animations, and all other features
