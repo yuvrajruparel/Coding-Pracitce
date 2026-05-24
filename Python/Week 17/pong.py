@@ -99,6 +99,8 @@ class MenuScene(Scene):
     def handle_event(self, event):
         if event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
             self.manager.go_to(PlayScene(self.manager))
+        elif event.type == pygame.KEYDOWN and event.key == pygame.K_m:
+            pygame.event.post(pygame.event.Event(pygame.QUIT))
 
     def draw(self, screen):
         screen.fill(BLACK)
@@ -106,6 +108,8 @@ class MenuScene(Scene):
         hint = self.small.render("RETURN to start  ·  SPACE to pause  ·  ESC to quit", True, GREY)
         screen.blit(title, title.get_rect(center=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2 - 30)))
         screen.blit(hint, hint.get_rect(center=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2 + 40)))
+        mm = self.small.render("M for Main Menu", True, GREY)
+        screen.blit(mm, mm.get_rect(topright=(SCREEN_WIDTH - 15, 15)))
 
 class PlayScene(Scene):
     def __init__(self, manager):

@@ -97,3 +97,5 @@ Sunday: Built pygame model, with sliders, radio buttons, and a physical simulati
 Using pygame to create an online Arcade with 3 classic games, Brick Breaker, Pong, and Asteroids Lite. I integrated animations, sound systems, different scenes to represent a Game Menu, Win/Lose Scene, and a Main menu that can access all 3 games, with buttons to select the game to play.
 
 Saturday: Built the Pong game against AI Bot, completely equipped with sounds, animations, and all other features
+
+Sunday: Built Asteroids-Lite, more visual game, and Main Menu that links all three games
