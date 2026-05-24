@@ -98,4 +98,4 @@ Using pygame to create an online Arcade with 3 classic games, Brick Breaker, Pon
 
 Saturday: Built the Pong game against AI Bot, completely equipped with sounds, animations, and all other features
 
-Sunday: Built Asteroids-Lite, more visual game, and Main Menu that links all three games
+Sunday: Built Asteroids-Lite, a more visual game, and Main Menu that links all three games
