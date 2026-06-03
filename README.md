@@ -99,3 +99,18 @@ Using pygame to create an online Arcade with 3 classic games, Brick Breaker, Pon
 Saturday: Built the Pong game against AI Bot, completely equipped with sounds, animations, and all other features
 
 Sunday: Built Asteroids-Lite, a more visual game, and Main Menu that links all three games
+## Week 18 (June 1st/2026 - June 7th/2026): Desktop Automation
+<table border="1">
+  <tr>
+    <th>Date</th>
+    <th>Topic</th>
+    <th>What I learnt</th>
+    <th>Mini Project</th>
+  </tr>
+  <tr>
+    <td>06/01/2026</td>
+    <td>Tkinter Fundamentals</td> 
+    <td>Tk() root, widgets (Label/Button/Entry), pack/grid/place layouts, event bindings, mainloop</td> 
+    <td>Hello Tkinter: window with name entry, greet button, label updates on click, exit hotkey, basic padding/sizing</td>
+  </tr>
+</table>
