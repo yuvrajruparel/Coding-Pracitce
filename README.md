@@ -109,7 +109,7 @@ Sunday: Built Asteroids-Lite, a more visual game, and Main Menu that links all t
   </tr>
   <tr>
     <td>06/01/2026</td>
-    <td>Decorators & Functional Patterns</td>
+    <td>Decorators</td>
     <td>@decorator syntax, *args/**kwargs forwarding, functools.wraps, closures, lambda/map/filter</td>
     <td>decorators_lab.py: @timer, @retry(n), @log_calls — applied to dummy functions to verify wrapping and metadata preservation</td>
   </tr>
@@ -118,5 +118,11 @@ Sunday: Built Asteroids-Lite, a more visual game, and Main Menu that links all t
     <td>Talking to the OS</td>
     <td>subprocess.run, stdout/stderr/returncode, list-args vs shell=True, open -a, osascript -e</td>
     <td>os_bridge.py: run_shell helper, launch_app/open_url, osa() AppleScript wrapper, notify() and safari_tab() built on top</td>
+  </tr>
+  <tr>
+    <td>06/03/2026</td>
+    <td>pyautogui + global hotkeys</td>
+    <td>moveTo/click, typewrite, global hotkeys, FAILSAFE, macOS Accessibility + Input Monitoring perms</td>
+    <td>hotkey_demo.py: cmd+shift+1 types email, cmd+shift+2 clicks center, esc quits; pynput GlobalHotKeys after keyboard lib failed on mac</td>
   </tr>
 </table>
