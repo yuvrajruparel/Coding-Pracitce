@@ -109,9 +109,9 @@ Sunday: Built Asteroids-Lite, a more visual game, and Main Menu that links all t
   </tr>
   <tr>
     <td>06/01/2026</td>
-    <td>Tkinter Fundamentals</td> 
-    <td>Tk() root, widgets (Label/Button/Entry), pack/grid/place layouts, event bindings, mainloop</td> 
-    <td>Hello Tkinter: window with name entry, greet button, label updates on click, exit hotkey, basic padding/sizing</td>
+    <td>Decorators & Functional Patterns</td>
+    <td>@decorator syntax, *args/**kwargs forwarding, functools.wraps, closures, lambda/map/filter</td>
+    <td>decorators_lab.py: @timer, @retry(n), @log_calls — applied to dummy functions to verify wrapping and metadata preservation</td>
   </tr>
   <tr>
     <td>06/02/2026</td>
