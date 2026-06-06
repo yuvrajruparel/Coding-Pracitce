@@ -113,4 +113,10 @@ Sunday: Built Asteroids-Lite, a more visual game, and Main Menu that links all t
     <td>Tk() root, widgets (Label/Button/Entry), pack/grid/place layouts, event bindings, mainloop</td> 
     <td>Hello Tkinter: window with name entry, greet button, label updates on click, exit hotkey, basic padding/sizing</td>
   </tr>
+  <tr>
+    <td>06/02/2026</td>
+    <td>Talking to the OS</td>
+    <td>subprocess.run, stdout/stderr/returncode, list-args vs shell=True, open -a, osascript -e</td>
+    <td>os_bridge.py: run_shell helper, launch_app/open_url, osa() AppleScript wrapper, notify() and safari_tab() built on top</td>
+  </tr>
 </table>
