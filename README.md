@@ -125,4 +125,10 @@ Sunday: Built Asteroids-Lite, a more visual game, and Main Menu that links all t
     <td>moveTo/click, typewrite, global hotkeys, FAILSAFE, macOS Accessibility + Input Monitoring perms</td>
     <td>hotkey_demo.py: cmd+shift+1 types email, cmd+shift+2 clicks center, esc quits; pynput GlobalHotKeys after keyboard lib failed on mac</td>
   </tr>
+  <tr>
+      <td>06/04/2026</td>
+      <td>autoclicker build</td>
+      <td>threading daemon loops, cps timing, hold-to-spam, decorator-registered hotkeys</td>
+      <td>autoclicker.py: ctrl+shift+s toggle, ctrl+shift+up/down cps, hold 'r' minecraft, esc quits; pynput single-listener after two listeners crashed on mac</td>
+    </tr>
 </table>
