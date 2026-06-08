@@ -131,4 +131,10 @@ Sunday: Built Asteroids-Lite, a more visual game, and Main Menu that links all t
       <td>threading daemon loops, cps timing, hold-to-spam, decorator-registered hotkeys</td>
       <td>autoclicker.py: ctrl+shift+s toggle, ctrl+shift+up/down cps, hold 'r' minecraft, esc quits; pynput single-listener after two listeners crashed on mac</td>
     </tr>
+    <tr>
+    <td>06/05/2026</td>
+    <td>screenbot build</td>
+    <td>locateOnScreen matching, retina coord fix, applescript window focus</td>
+    <td>screen_bot.py: locates cropped png, clicks center; cmd+shift+f toggles safari/notes via applescript; retina 2x fix physical→logical coords; esc quits</td>
+  </tr>
 </table>
