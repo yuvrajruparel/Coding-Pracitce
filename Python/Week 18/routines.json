@@ -1,0 +1,5 @@
+{
+  "work":   { "notify": "time to work",  "clipboard": "standup notes:\n- " },
+  "study":  { "notify": "study mode on", "clipboard": "" },
+  "gaming": { "notify": "gaming time",   "clipboard": "" }
+}
