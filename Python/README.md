@@ -138,3 +138,10 @@ Sunday: Built Asteroids-Lite, a more visual game, and Main Menu that links all t
     <td>screen_bot.py: locates cropped png, clicks center; cmd+shift+f toggles safari/notes via applescript; retina 2x fix physical→logical coords; esc quits</td>
   </tr>
 </table>
+
+### Weekend Project: Morning Launcher
+Using Python to control my Mac: a launcher that fires routines — open apps, Safari tabs, a Spotify playlist, clipboard text, and notifications — from one command. I built an os_bridge over subprocess and AppleScript, then moved every routine into a JSON config so adding one never touches the code.
+
+Saturday: Built launcher v1 — the os_bridge (subprocess + AppleScript), notifications, and clipboard, running one hardcoded routine
+
+Sunday: Built v2 — JSON-configured routines, an action dispatch table, CLI triggers, and daily scheduling through launchd

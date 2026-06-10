@@ -1,5 +1,21 @@
 {
-  "work":   { "notify": "time to work",  "clipboard": "standup notes:\n- " },
-  "study":  { "notify": "study mode on", "clipboard": "" },
-  "gaming": { "notify": "gaming time",   "clipboard": "" }
+  "work": {
+    "actions": [
+      {"type": "notify", "value": "Work mode on."},
+      {"type": "app",    "value": "Visual Studio Code"},
+      {"type": "safari", "value": "https://duke.instructure.com"},
+      {"type": "url",    "value": "https://mail.google.com"},
+      {"type": "clip",   "value": "yr94@duke.edu"}
+    ]
+  },
+  "morning": {
+    "actions": [
+      {"type": "spotify", "value": "spotify:playlist:5QlQE08sx4kM2MiK0lXcdO"},
+      {"type": "safari",  "value": "https://duke.edu"},
+      {"type": "notify",  "value": "Go."}
+    ]
+  },
+  "_schedule": [
+    {"at": "08:00", "routine": "morning"}
+  ]
 }
