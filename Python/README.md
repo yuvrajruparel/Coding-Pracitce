@@ -145,3 +145,4 @@ Using Python to control my Mac: a launcher that fires routines — open apps, Sa
 Saturday: Built launcher v1 — the os_bridge (subprocess + AppleScript), notifications, and clipboard, running one hardcoded routine
 
 Sunday: Built v2 — JSON-configured routines, an action dispatch table, CLI triggers, and daily scheduling through launchd
+
